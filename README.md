@@ -1,4 +1,4 @@
-# grunt-contrib-jade v1.0.0
+# grunt-svg-toolkit v1.0.0
 
 > Toolkit for working with SVG
 
