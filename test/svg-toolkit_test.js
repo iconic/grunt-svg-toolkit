@@ -9,7 +9,7 @@ exports.svgtoolkit = {
   iconic_icons: function (test) {
     test.expect(7);
 
-    var actual = 'tmp/test/fixtures/iconic/';
+    var actual = 'tmp/svg/iconic/';
     var expected = 'test/expected/svg/iconic/';
 
     function checkSVGIcon(name) {

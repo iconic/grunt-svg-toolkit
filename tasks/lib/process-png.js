@@ -8,4 +8,9 @@
 
 'use strict';
 
-var path = require('path');
+module.exports = function (file, page, data, done) {
+
+  console.log(':TODO: Generating PNG for: ' + file.filename);
+
+  done(null, file, page, data);
+};

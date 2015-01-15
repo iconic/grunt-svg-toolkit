@@ -34,8 +34,16 @@ module.exports = function (grunt) {
     // Configuration to be run (and then tested).
     svgtoolkit: {
       test: {
-        src: ['test/fixtures/**/*.svg'],
-        dest: 'tmp',
+        // src: ['test/fixtures/**/*.svg'],
+        // dest: 'tmp',
+        files: [
+          {
+            expand: true,
+            cwd: 'test/fixtures/',
+            src: '**/*.svg',
+            dest: 'tmp'
+          }
+        ],
         options: {
           stuff: 'stuff'
         }
