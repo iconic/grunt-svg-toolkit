@@ -8,9 +8,11 @@
 
 'use strict';
 
-module.exports = function (file, page, data, done) {
+module.exports = function (data, done) {
+  console.log('Closing page');
 
-  console.log(':TODO: Generating PNG for: ' + file.filename);
+  data.page.close();
+  data.page = null;
 
-  done(null, file, page, data);
+  done(null, data);
 };
