@@ -1,0 +1,124 @@
+<svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" viewBox="0 0 800 600">
+<defs>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+        @import url(http://fonts.googleapis.com/css?family=Pacifico:400);
+        @import url(http://fonts.googleapis.com/css?family=Lobster);
+    </style>
+</defs>
+<g id="laptop">
+  <path opacity="0.75" d="M726.3,453.8l-20.4,0.3l-20.4,0.2l-40.8,0.4l-81.6,0.6c-27.2,0.2-54.4,0.2-81.6,0.3l-81.6,0.2l-81.6-0.2
+    l-40.8-0.1l-20.4-0.1l-20.4-0.1l-81.6-0.6l-40.8-0.5l-20.4-0.2l-20.4-0.3l20.4-0.3l20.4-0.2l40.8-0.5l81.6-0.6l20.4-0.1l20.4-0.1
+    l40.8-0.1l81.6-0.2l81.6,0.2c27.2,0.1,54.4,0,81.6,0.3l81.6,0.6l40.8,0.4l20.4,0.2L726.3,453.8z"/>
+  <g>
+    <path d="M110,439.5c-5.2,0-9.5-4.3-9.5-9.5V80c0-5.2,4.3-9.5,9.5-9.5h580c5.2,0,9.5,4.3,9.5,9.5v350c0,5.2-4.3,9.5-9.5,9.5H110z"
+      />
+    <path opacity="0.1" fill="#FFFFFF" d="M100,80v350c0,5.5,4.5,10,10,10h99.4l97.2-15L493.4,70H110C104.5,70,100,74.5,100,80z"/>
+    <g>
+      <path fill="#333333" d="M690,71c5,0,9,4,9,9v350c0,5-4,9-9,9H110c-5,0-9-4-9-9V80c0-5,4-9,9-9H690 M690,70H110
+        c-5.5,0-10,4.5-10,10v350c0,5.5,4.5,10,10,10h580c5.5,0,10-4.5,10-10V80C700,74.5,695.5,70,690,70L690,70z"/>
+    </g>
+  </g>
+  <g>
+    <rect x="119.5" y="89.5" fill="#FFFFFF" width="561" height="321"/>
+    <path fill="#CCCCCC" d="M680,90v320H120V90H680 M681,89h-1H120h-1v1v320v1h1h560h1v-1V90V89L681,89z"/>
+  </g>
+  <g>
+    <path fill="#666666" d="M732.1,439.5H67.9h-10v7.2c0,4,4.5,7.2,10,7.2h664.3c5.5,0,10-3.2,10-7.2v-7.2H732.1z"/>
+    <rect x="57.9" y="439.5" opacity="0.25" fill="#FFFFFF" width="684.3" height="7.2"/>
+    <path fill="#999999" d="M60,440c-2.8,0-2.9-0.7-0.3-1.6l35.5-11.8c2.6-0.9,7-1.6,9.7-1.6h590c2.8,0,7.1,0.7,9.7,1.6l35.5,11.8
+      c2.6,0.9,2.5,1.6-0.3,1.6H60z"/>
+    <path opacity="0.5" fill="#FFFFFF" d="M60,440c-2.8,0-2.9-0.7-0.3-1.6l35.5-11.8c2.6-0.9,7-1.6,9.7-1.6h590c2.8,0,7.1,0.7,9.7,1.6
+      l35.5,11.8c2.6,0.9,2.5,1.6-0.3,1.6H60z"/>
+  </g>
+  <circle cx="400" cy="79.6" r="5"/>
+  <circle fill="#666666" cx="400" cy="79.6" r="1"/>
+</g>
+<g id="infographic">
+  <g id="layerA">
+    <defs>
+      <path id="clipA" d="M500,399.5c0-55.2-44.8-100-100-100s-100,44.8-100,100H200c0-110.5,89.5-200,200-200s200,89.5,200,200H500z"
+        />
+    </defs>
+    <clipPath id="clipA_1_">
+      <use xlink:href="#clipA"  overflow="visible"/>
+    </clipPath>
+    <path id="colorA" clip-path="url(#clipA_1_)" fill="#79CF01" d="M400,199.5c-110.5,0-200,89.5-200,200h10
+      c0-104.9,85.1-190,190-190c104.9,0,190,85.1,190,190h10C600,289,510.5,199.5,400,199.5z"/>
+  </g>
+  <g id="layerB">
+    <defs>
+      <path id="clipB" d="M500,399.5c0-55.2-44.8-100-100-100s-100,44.8-100,100H200c0-110.5,89.5-200,200-200s200,89.5,200,200H500z"
+        />
+    </defs>
+    <clipPath id="clipB_1_">
+      <use xlink:href="#clipB"  overflow="visible"/>
+    </clipPath>
+    <path id="colorB" clip-path="url(#clipB_1_)" fill="#79CF01" d="M400,219.5c-99.4,0-180,80.6-180,180h10c0-93.9,76.1-170,170-170
+      c93.9,0,170,76.1,170,170h10C580,300.1,499.4,219.5,400,219.5z"/>
+  </g>
+  <g id="layerC">
+    <defs>
+      <path id="clipC" d="M500,399.5c0-55.2-44.8-100-100-100s-100,44.8-100,100H200c0-110.5,89.5-200,200-200s200,89.5,200,200H500z"
+        />
+    </defs>
+    <clipPath id="clipC_1_">
+      <use xlink:href="#clipC"  overflow="visible"/>
+    </clipPath>
+    <path id="colorC" clip-path="url(#clipC_1_)" fill="#79CF01" d="M400,239.5c-88.4,0-160,71.6-160,160h10c0-82.8,67.2-150,150-150
+      c82.8,0,150,67.2,150,150h10C560,311.1,488.4,239.5,400,239.5z"/>
+  </g>
+  <g id="layerD">
+    <defs>
+      <path id="clipD" d="M500,399.5c0-55.2-44.8-100-100-100s-100,44.8-100,100H200c0-110.5,89.5-200,200-200s200,89.5,200,200H500z"
+        />
+    </defs>
+    <clipPath id="clipD_1_">
+      <use xlink:href="#clipD"  overflow="visible"/>
+    </clipPath>
+    <path id="colorD" clip-path="url(#clipD_1_)" fill="#79CF01" d="M400,259.5c-77.3,0-140,62.7-140,140h10c0-71.8,58.2-130,130-130
+      c71.8,0,130,58.2,130,130h10C540,322.2,477.3,259.5,400,259.5z"/>
+  </g>
+  <g id="layerE">
+    <defs>
+      <path id="clipE" d="M500,399.5c0-55.2-44.8-100-100-100s-100,44.8-100,100H200c0-110.5,89.5-200,200-200s200,89.5,200,200H500z"
+        />
+    </defs>
+    <clipPath id="clipE_1_">
+      <use xlink:href="#clipE"  overflow="visible"/>
+    </clipPath>
+    <path id="colorE" clip-path="url(#clipE_1_)" fill="#79CF01" d="M400,279.5c-66.3,0-120,53.7-120,120h10c0-60.8,49.2-110,110-110
+      c60.8,0,110,49.2,110,110h10C520,333.2,466.3,279.5,400,279.5z"/>
+  </g>
+  <g id="layerF">
+    <defs>
+      <path id="clipF" d="M200,399.5c0-110.5,89.5-200,200-200s200,89.5,200,200H200z"/>
+    </defs>
+    <clipPath id="clipF_1_">
+      <use xlink:href="#clipF"  overflow="visible"/>
+    </clipPath>
+    <path id="colorF" clip-path="url(#clipF_1_)" fill="#79CF01" d="M400,299.5c-55.2,0-100,44.8-100,100h10c0-49.7,40.3-90,90-90
+      c49.7,0,90,40.3,90,90h10C500,344.3,455.2,299.5,400,299.5z"/>
+  </g>
+  <rect id="markA" x="130" y="110" fill="#79CF01" width="10" height="10"/>
+  <rect id="markB" x="130" y="150" fill="#79CF01" width="10" height="10"/>
+  <rect id="markC" x="310" y="110" fill="#79CF01" width="10" height="10"/>
+  <rect id="markD" x="310" y="150" fill="#79CF01" width="10" height="10"/>
+  <rect id="markE" x="500" y="110" fill="#79CF01" width="10" height="10"/>
+  <rect id="markF" x="500" y="150" fill="#79CF01" width="10" height="10"/>
+  <g id="EditableText">
+    <text id="textA" x="129.5" y="134" font-family="'Pacifico', cursive" font-size="12">Replace with your text (A)</text>
+    <text id="textB" x="129.5" y="174" font-family="'Lobster'" font-size="12">Replace with your text (B)</text>
+    <text id="textC" x="308.833" y="134" font-family="'Open Sans'" font-size="12">Replace with your text (C)</text>
+    <text id="textD" x="308.833" y="174" font-family="'Open Sans'" font-size="12">Replace with your text (D)</text>
+    <text id="textE" x="499.166" y="134" font-family="'Open Sans'" font-size="12">Replace with your text (E)</text>
+    <text id="textF" x="499.166" y="174" font-family="'Open Sans'" font-size="12">Replace with your text (F)</text>
+    <text id="perA" x="141.5" y="118.75" fill="#79CF01" font-family="'Pacifico', cursive" font-weight="700" font-size="12">100</text>
+    <text id="perB" x="141.5" y="158.9165" fill="#79CF01" font-family="'Lobster'" font-weight="700" font-size="12">100</text>
+    <text id="perC" x="321.5" y="118.75" fill="#79CF01" font-family="'Open Sans'" font-weight="700" font-size="12">100</text>
+    <text id="perD" x="321.5" y="158.9165" fill="#79CF01" font-family="'Open Sans'" font-weight="700" font-size="12">100</text>
+    <text id="perE" x="511.5" y="118.75" fill="#79CF01" font-family="'Open Sans'" font-weight="700" font-size="12">100</text>
+    <text id="perF" x="511.5" y="158.9165" fill="#79CF01" font-family="'Open Sans'" font-weight="700" font-size="12">100</text>
+  </g>
+</g>
+</svg>

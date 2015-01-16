@@ -1,0 +1,16 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" data-icon="action-redo" width="128" height="128" class="iconic iconic-action iconic-size-lg iconic-action-redo" viewBox="0 0 128 128">
+  <g>
+    <title>Action Redo</title>
+  </g>
+  <style>
+    /* <![CDATA[ */
+    path {
+      fill: #cc0 !important;
+    }
+    /* ]]> */
+  </style>
+  <g data-width="128" data-height="96" class="iconic-container iconic-action-redo" transform="translate(0 16 ) scale(1 1 ) ">
+    <path d="M98 59c0-27.1-21.9-49-49-49s-49 21.9-49 49c0-32.6 26.4-59 59-59s59 26.4 59 59v11h-20v-11z" class="iconic-action-redo-stem iconic-property-fill"></path>
+    <path d="M108.8 94.7l18.4-29.5c.4-.7.1-1.3-.7-1.3h-37c-.8 0-1.1.6-.7 1.3l18.4 29.5c.4.7 1.2.7 1.6 0z" class="iconic-action-redo-arrowhead iconic-property-fill" ></path>
+  </g>
+</svg>
