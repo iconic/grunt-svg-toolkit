@@ -14,7 +14,7 @@ module.exports = function (data, done) {
     var phantom = require('phantom');
 
     phantom.create(function (ph) {
-      console.log('New PhantomJS instance created.');
+      // console.log('New PhantomJS instance created.');
       data.phantomjs = ph;
       done(null, data);
     }, {
@@ -24,7 +24,7 @@ module.exports = function (data, done) {
     });
   }
   else {
-    console.log('Using previously created PhantomJS instance.');
+    // console.log('Using previously created PhantomJS instance.');
     done(null, data);
   }
 };

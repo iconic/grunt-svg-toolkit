@@ -14,8 +14,8 @@ module.exports = function (data, done) {
   data.page.setContent('<html><head><title>SVG Toolkit Phantom Helper</title></head><body>Placeholder</body></html>');
 
   data.page.set('viewportSize', {
-    width: 2048,
-    height: 2048
+    width: 1024,
+    height: 1024
   });
 
   data.page.evaluate(function () {
@@ -30,11 +30,9 @@ module.exports = function (data, done) {
       item.style.overflow = 'hidden';
     });
 
-    var title = document.querySelector('title').innerText;
-    return title;
+    return;
 
   }, function (result) {
-    console.log('Page title is: ' + result);
     done(null, data);
   });
 };

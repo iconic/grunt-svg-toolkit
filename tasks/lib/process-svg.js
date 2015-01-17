@@ -12,49 +12,53 @@ module.exports = function (data, done) {
   console.log('Processing SVG: ' + data.file.filename);
 
   data.page.evaluate(function (svg) {
-    // var title = document.querySelector('title').innerText;
-    // return document.querySelector('body').innerText;
 
-    // Put the SVG on the page
-    // document.querySelector('body').innerHTML = svg;
+    // If not defined, set the width and height attributes to match the viewBox dimensions
+    function normalizeDimensions(element) {
+      // Default to 256x256 if there is no viewBox
+      // :TODO: Make this a config setting
+      var viewbox = element.getAttribute('viewBox') || '0 0 256 256';
+      viewbox = viewbox.split(' ');
 
+      var dimensions = {
+        x: viewbox[0],
+        y: viewbox[1],
+        width: viewbox[2],
+        height: viewbox[3]
+      };
+
+      element.setAttribute('width', element.getAttribute('width') || dimensions.width);
+      element.setAttribute('height', element.getAttribute('height') || dimensions.height);
+    }
+
+    function sanitizeSVG(element) {
+
+      // Remove deprecated 'enable-background' attribute
+      // http://www.w3.org/TR/filter-effects/#AccessBackgroundImage
+      element.removeAttribute('enable-background');
+
+      // Remove Adobe Illustrator image metadata
+      var adobeMetadata = element.getElementsByTagNameNS('*', 'pgf');
+      [].forEach.call(adobeMetadata, function (item) {
+        console.log('Removing adobeMetadata');
+        item.parentNode.removeChild(item);
+      });
+
+      // :NOTE: These selectors don't work because the requiredExtensions attribute
+      // in the switch causes these elements to no render/exist evidently?
+      var foreignObjects  = element.querySelectorAll('foreignObject, foreignobject');
+      [].forEach.call(foreignObjects, function (item) {
+        console.log('Removing foreignObject');
+        item.parentNode.removeChild(item);
+      });
+    }
+
+    // Import the SVG source string into the DOM
     var parser = new DOMParser();
     var doc = parser.parseFromString(svg, 'image/svg+xml');
     // var importedDoc = document.importNode(doc.documentElement.firstChild, true);
     // var importedDoc = document.importNode(doc.documentElement, true);
     document.body.appendChild(doc.documentElement);
-
-
-    function sanitizeSVG(element) {
-      console.log('polygon: ' + element.getElementsByTagName('polygon').length);
-      var item;
-      item = element.getElementsByTagNameNS('*', 'pgf');
-      console.log('pgf: ' + item.length);
-      // if (item && item[0]) {
-      //   item[0].parentNode.removeChild(item[0]);
-      // }
-
-      var items = element.getElementsByTagNameNS('*', 'pgf');
-      [].forEach.call(items, function (item) {
-        console.log('removing: ' + item);
-        item.parentNode.removeChild(item);
-      });
-
-      item = element.getElementsByTagName('foreignObject');
-      console.log('foreignObject: ' + element.getElementsByTagName('foreignObject').length);
-      //console.log(item);
-      if (item && item[0]) {
-        item[0].parentNode.removeChild(item[0]);
-      }
-
-      item = element.getElementsByTagName('foreignobject');
-      console.log('foreignobject: ' + element.getElementsByTagName('foreignobject').length);
-      //console.log(item);
-      if (item && item[0]) {
-        item[0].parentNode.removeChild(item[0]);
-      }
-    }
-
 
     // Get the now live SVG DOM element to work with
     var svgEl = document.querySelector('svg');
@@ -63,39 +67,23 @@ module.exports = function (data, done) {
       console.log(document.querySelector('body').innerHTML);
     }
 
+    // Now that we have the SVG in Phantom as a DOM element, process it...
     sanitizeSVG(svgEl);
+    normalizeDimensions(svgEl);
 
-    // var s = new XMLSerializer();
-    // console.log(s.serializeToString(svgEl));
-
+    // Serialize the SVG DOM element back into a string and return it
+    var serializer = new XMLSerializer();
     var result = {
       svg: {
-        cleaned: document.querySelector('body').innerHTML,
-        viewBox: svgEl.getAttribute('viewBox'),
-        width: svgEl.clientWidth,
-        height: svgEl.clientHeight,
+        cleaned: serializer.serializeToString(svgEl)
       }
     };
 
     return result;
 
   }, function (result) {
-    console.log('SVG Viewbox is: ' + result.svg.viewBox);
-    console.log('Width x Height: ' + result.svg.width + 'x' + result.svg.height);
 
-    // Update the page viewportSize and clipRect to match SVG dimensions
-    data.page.set('viewportSize', {
-      width: result.svg.width,
-      height: result.svg.height
-    });
-
-    data.page.set('clipRect', {
-      top: 0,
-      left: 0,
-      width: result.svg.width,
-      height: result.svg.height
-    });
-
+    // Update and pass along the newly transformed SVG
     data.svg = result.svg.cleaned;
 
     done(null, data);

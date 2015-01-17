@@ -60,6 +60,7 @@ module.exports = function (grunt) {
             console.log(chalk.yellow('Processing file: ', chalk.black.bgYellow('%s')), file.filename);
 
             var data = {
+              options: options,
               grunt: grunt,
               file: file,
               phantomjs: phantomjs
