@@ -35,7 +35,9 @@ module.exports = function (grunt) {
     svgtoolkit: {
       test: {
         options: {
-          stuff: 'stuff'
+          generatePNGs: true,
+          color: 'thistle',
+          theme: '../styles.css'
         },
         files: [
           {
