@@ -34,8 +34,9 @@ module.exports = function (grunt) {
     // Configuration to be run (and then tested).
     svgtoolkit: {
       test: {
-        // src: ['test/fixtures/**/*.svg'],
-        // dest: 'tmp',
+        options: {
+          stuff: 'stuff'
+        },
         files: [
           {
             expand: true,
@@ -43,10 +44,7 @@ module.exports = function (grunt) {
             src: '**/*.svg',
             dest: 'tmp'
           }
-        ],
-        options: {
-          stuff: 'stuff'
-        }
+        ]
       }
     }
 
@@ -63,5 +61,6 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['jshint', 'clean', 'svgtoolkit', 'nodeunit']);
 
   // Default task
-  grunt.registerTask('default', ['test']);
+  grunt.registerTask('default', ['svgtoolkit']);
+  // grunt.registerTask('default', ['test']);
 };
