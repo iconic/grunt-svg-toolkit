@@ -36,13 +36,15 @@ module.exports = function (grunt) {
       test: {
         options: {
           generatePNGs: true,
-          color: 'thistle',
-          theme: '../styles.css'
+          //color: '#808000',
+          style: 'test/fixtures/css/themes/blue.css'
         },
         files: [
           {
             expand: true,
             cwd: 'test/fixtures/',
+            // src: 'noun-project-assortment/**/*.svg',
+            // src: 'illustrator-output/**/*.svg',
             src: '**/*.svg',
             dest: 'tmp'
           }

@@ -1,0 +1,40 @@
+/* -------------------- */
+/* Theme-specific rules */
+/* -------------------- */
+
+/* Make sure fills and strokes that don't get colorized if they shouldn't be */
+svg [stroke="none"],
+svg:not([stroke]) {
+  stroke: none !important;
+}
+svg [fill=none] {
+  fill: none !important;
+}
+
+/* Base color for all fills and strokes */
+svg * {
+  fill: #1b75bb;
+  stroke: #1b75bb;
+}
+
+/* ----------------------------- */
+/* Specific icon style overrides */
+/* ----------------------------- */
+
+/* Iconic samples */
+svg.iconic-nexus *,
+svg[data-icon=nexus] * {
+  fill: skyblue;
+  stroke: skyblue;
+}
+
+/* AI Logo sample */
+svg.ai-logo * {
+  fill: darkslategray;
+}
+svg.ai-logo path:nth-of-type(1) {
+  fill: cadetblue;
+}
+svg.ai-logo [fill*=FFFFFF] {
+  fill: linen;
+}

@@ -11,6 +11,12 @@
 module.exports = function (data, done) {
   var path = require('path');
 
+  // Only make PNGs if requested
+  if (!data.options.generatePNGs) {
+    done(null, data);
+    return;
+  }
+
   data.page.evaluate(function () {
     var svgEl = document.querySelector('svg');
 

@@ -9,9 +9,31 @@
 'use strict';
 
 module.exports = function (data, done) {
-  console.log('Processing SVG: ' + data.file.filename);
+  console.log('Processing SVG');
 
   data.page.evaluate(function (svg) {
+
+    function sanitizeSVG(element) {
+
+      // Remove deprecated 'enable-background' attribute
+      // http://www.w3.org/TR/filter-effects/#AccessBackgroundImage
+      element.removeAttribute('enable-background');
+
+      // Remove Adobe Illustrator image metadata
+      var adobeMetadata = element.getElementsByTagNameNS('*', 'pgf');
+      [].forEach.call(adobeMetadata, function (item) {
+        console.log('Removing adobeMetadata');
+        item.parentNode.removeChild(item);
+      });
+
+      // :NOTE: These selectors don't work because the requiredExtensions attribute
+      // in the switch causes these elements to no render/exist evidently?
+      var foreignObjects = element.querySelectorAll('foreignObject, foreignobject');
+      [].forEach.call(foreignObjects, function (item) {
+        console.log('Removing foreignObject');
+        item.parentNode.removeChild(item);
+      });
+    }
 
     // If not defined, set the width and height attributes to match the viewBox dimensions
     function normalizeDimensions(element) {
@@ -29,28 +51,6 @@ module.exports = function (data, done) {
 
       element.setAttribute('width', element.getAttribute('width') || dimensions.width);
       element.setAttribute('height', element.getAttribute('height') || dimensions.height);
-    }
-
-    function sanitizeSVG(element) {
-
-      // Remove deprecated 'enable-background' attribute
-      // http://www.w3.org/TR/filter-effects/#AccessBackgroundImage
-      element.removeAttribute('enable-background');
-
-      // Remove Adobe Illustrator image metadata
-      var adobeMetadata = element.getElementsByTagNameNS('*', 'pgf');
-      [].forEach.call(adobeMetadata, function (item) {
-        console.log('Removing adobeMetadata');
-        item.parentNode.removeChild(item);
-      });
-
-      // :NOTE: These selectors don't work because the requiredExtensions attribute
-      // in the switch causes these elements to no render/exist evidently?
-      var foreignObjects  = element.querySelectorAll('foreignObject, foreignobject');
-      [].forEach.call(foreignObjects, function (item) {
-        console.log('Removing foreignObject');
-        item.parentNode.removeChild(item);
-      });
     }
 
     // Import the SVG source string into the DOM
@@ -71,20 +71,9 @@ module.exports = function (data, done) {
     sanitizeSVG(svgEl);
     normalizeDimensions(svgEl);
 
-    // Serialize the SVG DOM element back into a string and return it
-    var serializer = new XMLSerializer();
-    var result = {
-      svg: {
-        cleaned: serializer.serializeToString(svgEl)
-      }
-    };
-
-    return result;
+    return;
 
   }, function (result) {
-
-    // Update and pass along the newly transformed SVG
-    data.svg = result.svg.cleaned;
 
     done(null, data);
   }, data.svg);

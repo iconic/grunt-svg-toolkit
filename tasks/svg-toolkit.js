@@ -17,10 +17,10 @@ module.exports = function (grunt) {
   grunt.registerMultiTask('svgtoolkit', 'Toolkit for working with SVG', function () {
     var allDone = this.async();
 
+    // Defaults, merged and overridden with user settings
     var options = this.options({
-      foo: 'blah'
+      generatePNGs: true
     });
-
 
     // Iterate over all specified file groups and collect valid files
     var files = [];
@@ -73,6 +73,8 @@ module.exports = function (grunt) {
           require('./lib/create-page'),
           require('./lib/init-page'),
           require('./lib/process-svg'),
+          require('./lib/colorize-svg'),
+          require('./lib/serialize-svg'),
           require('./lib/save-svg'),
           require('./lib/create-png'),
           require('./lib/close-page'),
