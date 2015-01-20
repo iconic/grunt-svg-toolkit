@@ -8,8 +8,7 @@
 
 'use strict';
 
-// THIS FILE IS NOT IN CURRENT USE.
-// Now using Cheerio for SVG DOM manip/parse/serialize, and to avoid
+// :TODO: Use Cheerio for SVG DOM manip/parse/serialize, and to avoid
 // the Phantom XMLSerializer namespace attribute mangling issue
 
 module.exports = function (data, done) {

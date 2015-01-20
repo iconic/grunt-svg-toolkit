@@ -81,6 +81,7 @@ module.exports = function (grunt) {
           require('./lib/process-svg'),
           require('./lib/add-svg-to-page'),
           require('./lib/colorize-svg'),
+          require('./lib/serialize-svg'),
           require('./lib/save-svg'),
           require('./lib/create-png'),
           require('./lib/close-page'),
