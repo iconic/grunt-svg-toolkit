@@ -1,6 +1,6 @@
 {
   "name": "grunt-svg-toolkit",
-  "description": "Toolkit for working with SVG",
+  "description": "> A toolkit for working with, styling and converting SVG files",
   "version": "0.1.0",
   "homepage": "https://github.com/iconic/grunt-svg-toolkit",
   "author": {
@@ -15,10 +15,12 @@
   "keywords": [
     "SVG",
     "Scalable Vector Graphics",
+    "CSS",
+    "style",
+    "colorize",
     "icons",
     "automation",
     "png",
-    "webp",
     "raster"
   ],
   "licenses": [
@@ -36,6 +38,7 @@
   "dependencies": {
     "async": "^0.9.0",
     "chalk": "^0.5.1",
+    "cheerio": "^0.18.0",
     "grunt-contrib-clean": "^0.6.0",
     "phantom": "^0.7.2"
   },
