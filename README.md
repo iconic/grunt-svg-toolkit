@@ -1,6 +1,20 @@
-# grunt-svg-toolkit v0.1.0
+# grunt-svg-toolkit
 
-> Toolkit for working with SVG
+**A toolkit for working with, styling and converting SVG files.**
+
+SVG Toolkit helps you work with SVG input files by normalizing, colorizing, styling and optionally converting to other formats, ready for production use.
+
+Example uses:
+
+* Create colorized SVGs and PNGs across an entire SVG icon set. Colors of your design changed? No problem... update your grunt file and re-run. Done. No need to open your design tools and update and re-export all your assets.
+
+* Using a CSS file to generate customized, themed SVG and PNG output assets. 
+
+* Basic (and conservative) SVG markup cleanup and normalization, decreasing asset size and increasing performance.
+
+Vector workflow powerup Pro-Tip:
+
+> SVG Toolkit works great with the output generated from the [Illustrator SVG Exporter](https://github.com/iconic/illustrator-svg-exporter)!
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
@@ -33,31 +47,54 @@ Task targets, files and options may be specified according to the grunt [Configu
 svgtoolkit: {
   dist: {
     options: {
-      generatePNG: true
+      generatePNGs: true,
+      style: 'src/css/themes/blue.css',
+      colorize: '#808000',
+      debug: false
     },
     files: [
       {
         expand: true,
         cwd: 'src/icons/',
         src: '**/*.svg',
-        dest: 'dist/images/icons'
+        dest: 'dist/icons'
       }
     ]
   }
-}
 ```
 
 #### Options
 
-##### generatePNG
-Type: `Boolean`
+##### generatePNGs
+Type: `Boolean`  
 Default: **true**
 
+Should PNGs be generated.
+
+##### style
+Type: `String`  
+Default: undefined
+
+The location of a CSS file that should be applied to the SVG(s). Great for creating a theme across an icon set and generating a matching set of SVGs/PNGs.
+
+##### colorize
+Type: `String`  
+Default: undefined
+
+Define a hex color value (e.g. #d8dfd8) or HTML color name (e.g. thistle) to colorize the SVG(s) by setting their `stroke` and `fill` attributes. Great for colorizing a set of icons.
+
+> Note: The `colorize` setting will override the `style` setting.
+
+##### debug
+Type: `Boolean`  
+Default: **false**
+
+Log task progress and details about the processing of each SVG.
 
 
 ## Known Issues
 
-* SVG with external font imports don't generate PNGs using those fonts currently. This will supposedly work in the upcoming PhantomJS 2 which has better font handling. Reference: https://github.com/ariya/phantomjs/issues/10592
+* SVG files with external font imports don't generate PNGs using those fonts currently. This will supposedly work in the upcoming PhantomJS 2 which has better font handling. Reference: https://github.com/ariya/phantomjs/issues/10592
 
 ```
 <defs>
@@ -67,10 +104,19 @@ Default: **true**
 </defs>
 ```
 
+## Contributing
+
+Your feedback is most welcome.
+
+Have a troublesome SVG you are using that isn't generating the output you'd expect? Open an [issue](https://github.com/iconic/grunt-svg-toolkit/issues) with the details and include the SVG markup for us to test with.
+
+Have an awesome idea for a new feature or additional output format that would be useful? Create a [`feature request` labeled issue](https://github.com/iconic/grunt-svg-toolkit/labels/feature%20request) describing it, or even better... send a [pull request](https://github.com/iconic/grunt-svg-toolkit/pulls)!
+
+Bugs? You know what to [do](https://github.com/iconic/grunt-svg-toolkit/issues).
 
 ## Release History
 
-### v0.1.0 (01/13/2015)
+### v0.1.0 (01/20/2015)
 - Initial release
 
 ## License
