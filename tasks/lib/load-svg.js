@@ -9,7 +9,7 @@
 'use strict';
 
 module.exports = function (data, done) {
-  console.log('Loading SVG file: ' + data.file.src);
+  data.logger('Loading SVG file: ' + data.file.src);
 
   data.svg = data.grunt.file.read(data.file.src);
 

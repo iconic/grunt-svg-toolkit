@@ -28,7 +28,7 @@ module.exports = function (data, done) {
     };
 
   }, function (result) {
-    // console.log('Width x Height: ' + result.svg.width + 'x' + result.svg.height);
+    // data.logger('Width x Height: ' + result.svg.width + 'x' + result.svg.height);
 
     // Update the page viewportSize and clipRect to match SVG dimensions
     data.page.set('viewportSize', {
@@ -48,13 +48,13 @@ module.exports = function (data, done) {
     var dest = path.join(data.file.destRoot, 'png', data.file.destSubdir, pngFilename);
 
     // data.page.get('viewportSize', function (result) {
-    //   console.log('Current viewportSize size: ');
-    //   console.log(result);
+    //   data.logger('Current viewportSize size: ');
+    //   data.logger(result);
     // });
 
     // Render to file
     data.page.render(dest, function () {
-      console.log('Generated PNG to file: ' + dest);
+      data.logger('Generated PNG to file: ' + dest);
       done(null, data);
     });
   });

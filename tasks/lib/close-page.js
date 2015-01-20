@@ -9,7 +9,7 @@
 'use strict';
 
 module.exports = function (data, done) {
-  // console.log('Closing page');
+  data.logger('Closing page');
 
   data.page.close();
   data.page = null;

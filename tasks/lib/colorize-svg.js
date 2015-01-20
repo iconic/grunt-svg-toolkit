@@ -9,9 +9,9 @@
 'use strict';
 
 module.exports = function (data, done) {
-  console.log('Colorizing SVG');
+  data.logger('Colorizing SVG');
 
-  if (!data.options.color && !data.options.style) {
+  if (!data.options.colorize && !data.options.style) {
     done(null, data);
     return;
   }
@@ -31,7 +31,7 @@ module.exports = function (data, done) {
     // Inject the stylesheet, if defined
     var style;
     if (stylesheet) {
-      var style = document.createElement('style');
+      style = document.createElement('style');
       style.appendChild(document.createTextNode(stylesheet));
       document.head.appendChild(style);
     }
@@ -85,8 +85,8 @@ module.exports = function (data, done) {
     var shapesAndText = 'path,rect,circle,ellipse,line,polyline,polygon,altGlyph,textPath,text,tref,tspan';
     var els = svgEl.querySelectorAll(shapesAndText);
 
-      [].forEach.call(els, function (item) {
-      svgcolor(item, options.color);
+    [].forEach.call(els, function (item) {
+      svgcolor(item, options.colorize);
     });
 
     // Remove the stylesheet now since there could be specific rules
