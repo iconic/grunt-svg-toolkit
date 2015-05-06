@@ -2,7 +2,7 @@
 
 module.exports = function ($, data, done) {
   // Elements on which we want to convert ids to classes...
-  var shapesAndText = 'path,rect,circle,ellipse,line,polyline,polygon,altGlyph,textPath,text,tref,tspan';
+  var shapesAndText = 'g,path,rect,circle,ellipse,line,polyline,polygon,altGlyph,textPath,text,tref,tspan';
 
   // ...but don't touch any in defs/clipPath/masks tags
   var excludeContainers = 'defs,clipPath,mask';
