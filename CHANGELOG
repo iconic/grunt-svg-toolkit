@@ -1,3 +1,8 @@
+v0.1.1:
+  date: 2015-05-06
+  changes:
+    - Fix for issue #3 - Converting SVG IDs to classes
+
 v0.1.0:
   date: 2015-01-13
   changes:
