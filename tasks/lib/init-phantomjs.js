@@ -20,14 +20,6 @@ module.exports = function (data, done) {
 
       done(null, data);
     });
-
-    // phantom.create(function (ph) {
-    //
-    // }, {
-    //   dnodeOpts: {
-    //     weak: false
-    //   }
-    // });
   }
   else {
     data.logger('Using previously created PhantomJS instance.');
