@@ -17,5 +17,6 @@ module.exports = function (data, done) {
 
   data.grunt.file.write(dest, data.svg);
 
+
   done(null, data);
 };

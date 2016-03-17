@@ -18,6 +18,7 @@ module.exports = function (data, done) {
   }
 
   data.page.evaluate(function () {
+
     var svgEl = document.querySelector('svg');
 
     return {
@@ -27,16 +28,17 @@ module.exports = function (data, done) {
       }
     };
 
-  }, function (result) {
+  }).then(function (result) {
+
     // data.logger('Width x Height: ' + result.svg.width + 'x' + result.svg.height);
 
     // Update the page viewportSize and clipRect to match SVG dimensions
-    data.page.set('viewportSize', {
+    data.page.property('viewportSize', {
       width: result.svg.width,
       height: result.svg.height
     });
 
-    data.page.set('clipRect', {
+    data.page.property('clipRect', {
       top: 0,
       left: 0,
       width: result.svg.width,
@@ -53,7 +55,7 @@ module.exports = function (data, done) {
     // });
 
     // Render to file
-    data.page.render(dest, function () {
+    data.page.render(dest).then(function() {
       data.logger('Generated PNG to file: ' + dest);
       done(null, data);
     });

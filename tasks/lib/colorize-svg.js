@@ -106,8 +106,8 @@ module.exports = function (data, done) {
 
     return;
 
-  }, function (result) {
+  }, data.options, stylesheet).then(function (result) {
 
     done(null, data);
-  }, data.options, stylesheet);
+  });
 };

@@ -9,20 +9,20 @@
 'use strict';
 
 module.exports = function (data, done) {
-  data.phantomjs.createPage(function (newpage) {
+  data.phantomjs.createPage().then(function (newpage) {
     data.logger('New PhantomJS page created');
 
     data.page = newpage;
 
-    newpage.set('onConsoleMessage', function (msg) {
+    newpage.property('onConsoleMessage', function (msg) {
       data.logger('Phantom Console: ' + msg);
     });
 
-    newpage.set('onLoadStarted', function () {
+    newpage.property('onLoadStarted', function () {
       data.logger('Phantom page loading started');
     });
 
-    newpage.set('onLoadFinished', function (status) {
+    newpage.property('onLoadFinished', function (status) {
       data.logger('Loading finished, the page is ' + ((status === 'success') ? 'open.' : 'not open!'));
     });
 
