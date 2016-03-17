@@ -18,7 +18,7 @@ module.exports = function (data, done) {
 
     return;
 
-  }, function (result) {
+  }, data.svg).then(function (result) {
     done(null, data);
-  }, data.svg);
+  });
 };

@@ -13,16 +13,21 @@ module.exports = function (data, done) {
   if (!data.phantomjs) {
     var phantom = require('phantom');
 
-    phantom.create(function (ph) {
+    phantom.create(['--web-security=no']).then(function(ph) {
       data.logger('New PhantomJS instance created.');
 
       data.phantomjs = ph;
+
       done(null, data);
-    }, {
-      dnodeOpts: {
-        weak: false
-      }
     });
+
+    // phantom.create(function (ph) {
+    //
+    // }, {
+    //   dnodeOpts: {
+    //     weak: false
+    //   }
+    // });
   }
   else {
     data.logger('Using previously created PhantomJS instance.');

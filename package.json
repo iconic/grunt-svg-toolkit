@@ -40,7 +40,7 @@
     "chalk": "^0.5.1",
     "cheerio": "^0.18.0",
     "grunt-contrib-clean": "^0.6.0",
-    "phantom": "^0.7.2"
+    "phantom": "^2.0.7"
   },
   "devDependencies": {
     "grunt": "~0.4.0",

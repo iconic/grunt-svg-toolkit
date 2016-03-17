@@ -13,7 +13,7 @@ exports.svgtoolkit = {
     var expected = 'test/expected/svg/iconic/';
 
     function checkSVGIcon(name) {
-      test.equal(grunt.file.read(actual + name), grunt.file.read(expected + name));
+      test.equal(grunt.file.read(actual + name).trim(), grunt.file.read(expected + name).trim());
     }
 
     checkSVGIcon('flat/nexus-lg.svg');

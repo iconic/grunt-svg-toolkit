@@ -11,9 +11,9 @@
 module.exports = function (data, done) {
 
   // Create a simple page wrapper
-  data.page.setContent('<html><head><title>SVG Toolkit Phantom Helper</title></head><body>Placeholder</body></html>');
+  data.page.property('content', '<html><head><title>SVG Toolkit Phantom Helper</title></head><body>Placeholder</body></html>');
 
-  data.page.set('viewportSize', {
+  data.page.property('viewportSize', {
     width: 1024,
     height: 1024
   });
@@ -32,7 +32,7 @@ module.exports = function (data, done) {
 
     return;
 
-  }, function (result) {
+  }).then(function (result) {
     done(null, data);
   });
 };

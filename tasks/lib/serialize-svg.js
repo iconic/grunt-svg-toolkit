@@ -31,7 +31,7 @@ module.exports = function (data, done) {
 
     return result;
 
-  }, function (result) {
+  }).then(function (result) {
 
     // Update and pass along the newly transformed SVG
     data.svg = result.svg.cleaned;
